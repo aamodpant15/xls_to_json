@@ -6,7 +6,10 @@ Dependencies:
 
 #### Usage
 
-1. Run `./json_from_xlsx.py1 <filename.xls/filename.xlsx> -a <sheetName>`
+1. Run
+```
+./json_from_xlsx.py1 <filename.xls/filename.xlsx> -a <sheetName>
+```
 2. Output found in "result.json" file
 
 Complexity: O(AB), A = Number of rows in sheet, B = Number of columns in sheet
