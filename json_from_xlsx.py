@@ -2,19 +2,26 @@
 # -*- coding: utf-8 -*-
 import json
 import openpyxl as xl
+from sys import argv
+
+
+aIndex= argv.index("-a")
+
+fileName= argv[1]
+
+sheetName= ""
+for args in range(aIndex+1,len(argv)):
+    sheetName = sheetName + " "+ argv[args]
+sheetName = sheetName.strip()
+
+if(len(argv) <3):
+    print ("\nUsage: ./json_from_xlsx <Filename.xlsx> -a <sheet_name>\n")
 
 #open workbook
-print("\n")
-print("-"*10)
-name = input("Name of file in <fileName.xls> or <fileName.xlsx> format\n")
-workbook = xl.load_workbook(name)
+workbook = xl.load_workbook(fileName)
 
-
-print("\n")
-print("-"*10)
 #get sheet
-name = input("Name of sheet inside file\n")
-sheet = workbook[name]
+sheet = workbook[sheetName]
 
 #member count
 memCount= 0
